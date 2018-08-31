@@ -1,19 +1,18 @@
-
 .container {
 
-    // border: 3px solid black;
-    position: relative;
-
     .sitenav {
+
         width: 20%;
-        height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
-    }
+
+    } // end .container .sitenav
 
     .content {
+
         margin-left: 20%; 
-        // flex-basis: 80%;    
-    }
-}
+
+    } // end .container .content
+
+} // end .container
