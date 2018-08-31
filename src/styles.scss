@@ -1,5 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+
+/**
+* Fonts
+*/
+.fonts {
+
+    &-roboto {
+        font-family: 'Roboto', sans-serif;
+    }
+
+}// end .fonts
+
+.roboto {
+
+    // robotoLight
+    &-light {
+
+        @extend .fonts-roboto;
+        font-style: normal;
+        font-weight: 300;
+
+    } //end .roboto-light
+
+    // robotoRegular
+    &-regular {
+
+        @extend .fonts-roboto;
+        font-style: normal;
+        font-weight: 400;
+
+    } //end .roboto-regular
+
+    // robotoBold
+    &-bold {
+
+        @extend .fonts-roboto;
+        font-style: normal;
+        font-weight: 700;
+
+    } //end .roboto-bold
+
+} //end .roboto
+
+
+/**
+* Colors
+*/
+
+$primary-color : #2979ff;
+$primary-dark-color : #004ecb;
+$primary-light-color : #75a7ff;
+
+$secondary-color : #1de9b6;
+$secondary-dark-color : #00b686;
+$secondary-light-color : #6effe8;
+
+//fonts colors
+$primary-font-color : #f5f5f5;
+$secondary-font-color : #fdd835;
+
+/**
+* Reset
+*/
+
+* {
+
+    box-sizing: border-box;
+
 }
+
+html, body {
+
+    font-size: 16px;
+    line-height:1.5em;
+    @extend .roboto-regular;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+}
+
+.container {
+
+    max-width: 1680px;
+    position: relative; 
+    margin: 0 auto;
+
+} // end .container
+
+/**
+* Media queries mixins
+*/
+// Mixin para crear una media query tipo 'min' o 'max
+@mixin responsive($type, $media){
+
+    @media only screen {
+
+        @if $type == min {
+
+            @media  (min-width: $media/16+em) { @content; };
+
+        } 
+        @else if $type == max {
+
+            @media (max-width: $media/16+em) { @content; };
+            
+        }
+
+    }   
+
+} //end responsive
+
+/**
+* Global Styles
+*/
+
+.is-active {
+    
+    border-bottom: 4px solid $secondary-font-color;
+    color: $secondary-font-color !important;
+
+} // end .is-active
