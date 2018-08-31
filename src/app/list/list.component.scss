@@ -1,0 +1,36 @@
+.list {
+    // border: 1px solid red;
+    flex-basis: 60%;
+    padding: 1em;
+
+    &-item {
+        // border: 1px solid green;
+        background-color: #1de9b6;
+        margin: 1em auto;
+        border-radius: 10px;
+
+        h4 {
+            font-weight: 700;
+            padding: 1rem 2rem;
+            margin: 0;
+
+            
+            a {
+                color: #004ecb;
+                text-decoration: none;
+                &:hover {
+                    color: #ffee58;
+                }
+            }
+        }
+
+        p {
+            color: white;
+            font-weight: 300;
+            line-height: 1.5em;
+            margin: 0;
+            padding: 0 2rem 1rem 2rem;
+        }
+    }
+
+}
