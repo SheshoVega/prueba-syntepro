@@ -1,5 +1,7 @@
 <div class="dash">
-    <a class="link" [routerLink]="['/create']">Crear Post</a>
-    <a class="link" [routerLink]="['/list']">Lista de Posts</a>
 
-</div>
+    <a class="link" [routerLink]="['/list']" [routerLinkActive]="['is-active']">Lista de Posts</a>
+
+    <a class="link" [routerLink]="['/create']" [routerLinkActive]="['is-active']">Crear Post</a>
+
+</div> <!-- end .dash -->

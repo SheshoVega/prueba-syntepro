@@ -1,24 +1,30 @@
+@import "../../styles.scss";
+
 .dash {
 
-
-    border: 1px solid transparent;
-    background-color: #2979ff;
+    background-color: $primary-color;
     height: 100vh;
+    padding: 1em 0;
 
     a {
         
         display: block;
         flex-basis: 100%;
         text-decoration: none;
-        background-color: #75a7ff;
+        background-color: $primary-light-color;
         text-align: center;
-        margin: 2em auto;
         padding: 1em;
         color: white;
-        font-weight: 700;
+        margin: 1em 0;
+        font-size: 1.15em;
+        @extend .roboto-bold;
 
         &:hover {
-            color: #ffee58;
+            color: $secondary-font-color;
         }
-    }
-}
+
+    }  // end .dash a
+
+} // end .dash
+
+
