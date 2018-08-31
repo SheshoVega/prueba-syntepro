@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -118,5 +118,10 @@
       }
     }
   },
-  "defaultProject": "angular-syntepro"
+  "defaultProject": "angular-syntepro",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
