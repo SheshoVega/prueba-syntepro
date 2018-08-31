@@ -8,16 +8,22 @@ import { FormComponent } from './form/form.component';
 
 import { routes } from "./app.routes";
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashComponent,
     ListComponent,
-    FormComponent
+    FormComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
