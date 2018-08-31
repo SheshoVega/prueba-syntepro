@@ -1,9 +1,13 @@
-
 <section class="list">
 
+	<h1>Lista de Posts</h1>
+	
 	<article class="list-item" *ngFor="let post of posts">
-		<h4><a [routerLink]="['/post/', post.id]">{{post.title}}</a></h4>
-		<p>{{post.body}}</p>
-	</article>
 
-</section>
+		<h4><a [routerLink]="['/post/', post.id]">{{post.title}}</a></h4>
+
+		<p>{{post.body}}</p>
+
+	</article> <!-- end .list-item -->
+
+</section> <!-- end .list -->
