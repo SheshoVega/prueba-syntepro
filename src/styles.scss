@@ -121,3 +121,38 @@ html, body {
     color: $secondary-font-color !important;
 
 } // end .is-active
+
+.btn {
+
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 0.5em 2em;
+    @extend .roboto-bold;
+    color: $primary-font-color;
+    
+} // end .btn
+
+.btn-reg {
+
+    background-color: $secondary-dark-color;
+
+    &:hover {
+
+        color: $secondary-font-color;
+
+    }
+
+}
+
+.btn-inv {
+
+    background-color: $secondary-font-color;
+
+    &:hover {
+
+        color: $secondary-dark-color;
+
+    }
+    
+}
