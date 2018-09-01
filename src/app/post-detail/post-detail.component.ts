@@ -17,6 +17,8 @@ export class PostDetailComponent implements OnInit, OnDestroy {
 	paramsSub: Subscription;
 	post: any;
 	isEditing: boolean;
+	message:string;
+	errors:boolean;
 
 	constructor(private route: ActivatedRoute, private postService: PostsService) { }
 
@@ -56,7 +58,19 @@ export class PostDetailComponent implements OnInit, OnDestroy {
 
 	}
 
-	updatePost() {
+	getPostDataFromForm(data:any) {
+
+		console.log(data);
+		if(data) {
+			
+			this.toggleEdit();
+			this.post = data;
+			this.errors = false;
+			this.message = 'Post Actualizado Exitosamente! ;-)';
+			setTimeout(()=>{
+				this.message = '';
+			}, 3000);
+		}
 		
 	}
 

@@ -1,3 +1,7 @@
+<div class="message" *ngIf="message" [ngClass]="{'success' : !errors, 'error': errors}">
+	<p>{{message}}</p>
+</div> <!-- end .message -->
+
 <section class="detail" *ngIf="!isEditing">
 
 	<h1>{{post?.title}}</h1>
@@ -14,4 +18,4 @@
 	
 </div> <!-- end .detail-actions -->
 
-<app-form [isEditing]="isEditing" [post]="post" *ngIf="isEditing"></app-form>
+<app-form (postData)="getPostDataFromForm($event)" [isEditing]="isEditing" [post]="post" *ngIf="isEditing"></app-form>
