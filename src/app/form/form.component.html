@@ -1,3 +1,22 @@
-<p>
-  form works!
-</p>
+<app-modal *ngIf="showModal" [isEditing]="isEditing" (action)="getModalAction($event)"></app-modal>
+<form class="form" [formGroup]="postForm">
+
+	<h1 *ngIf="!isEditing">Crear Post</h1>
+	<h1 *ngIf="isEditing">Editar Post</h1>
+
+	<label for="title">Título</label>
+	<input id="title" formControlName="title" type="text" placeholder="Digite el título del post...">
+
+	<label for="body">Contenido</label>
+	<textarea id="body" formControlName="body" placeholder="Digite el contenido del post..." rows="5"></textarea>
+
+</form>
+<div class="form-actions">
+
+	<a *ngIf="!isEditing" class="btn btn-reg" (click)="toModal()">Guardar</a>
+
+	<a *ngIf="isEditing" class="btn btn-reg" (click)="toModal()">Actualizar</a>
+
+	<a *ngIf="!isEditing" class="btn btn-inv" (click)="resetForm()">Limpiar Formulario</a>
+
+</div> <!-- end .form-actions -->

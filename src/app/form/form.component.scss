@@ -1,0 +1,64 @@
+@import "../../styles.scss";
+
+.form {
+
+    h1 {
+
+        color: $primary-dark-color;
+        margin: 2rem;
+        text-align: center;
+
+    } // end .form h1
+
+    label {
+
+        display: block;
+        margin: 0.23rem 0;
+        text-align: center;
+        @extend .roboto-bold;
+        font-size: 1.25em;
+        color: $secondary-color;
+
+    } // end .form label
+
+    %input-base {
+
+        display: block;
+        margin: 0 auto 1rem auto;
+        font-size: 1.15em;
+        @extend .roboto-light;
+        padding: 1rem;
+        color: $secondary-dark-color;
+        border: 1px solid $secondary-light-color;
+        border-radius: 5px;
+
+        &::placeholder {
+            color: $primary-color;
+        }
+
+    } // end .input-reset    
+
+    input {
+
+        @extend %input-base;
+        width: 50%;
+
+    } // end .form input
+    
+    textarea {
+
+        @extend %input-base;
+        width: 60%;
+
+    } // end .form textarea
+
+    &-actions {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1em 0;
+
+    } // end .form-actions
+
+} // end .form
