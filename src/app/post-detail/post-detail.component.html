@@ -1,4 +1,17 @@
-<section class="detail">
+<section class="detail" *ngIf="!isEditing">
+
 	<h1>{{post?.title}}</h1>
+
 	<p>{{post?.body}}</p>
-</section>
+
+</section> <!-- end .detail -->
+
+<div class="detail-actions">
+	
+	<a *ngIf="!isEditing" class="btn btn-reg" (click)="toggleEdit()">Editar</a>
+	
+	<a *ngIf="isEditing" class="btn btn-inv" (click)="toggleEdit()">Cancelar</a>
+	
+</div> <!-- end .detail-actions -->
+
+<app-form [isEditing]="isEditing" [post]="post" *ngIf="isEditing"></app-form>

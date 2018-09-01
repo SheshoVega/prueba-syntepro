@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../posts.service';
@@ -12,14 +12,18 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.scss']
 })
-export class PostDetailComponent implements OnInit {
+export class PostDetailComponent implements OnInit, OnDestroy {
 
 	paramsSub: Subscription;
 	post: any;
+	isEditing: boolean;
 
 	constructor(private route: ActivatedRoute, private postService: PostsService) { }
 
 	ngOnInit() {
+
+		this.isEditing = false;
+
 		this.paramsSub = this.route.params.pipe(
 			map(params => params['id'])
 		).subscribe(projectId => {
@@ -37,6 +41,23 @@ export class PostDetailComponent implements OnInit {
 				}
 			);
 		});
+
+	}
+
+	ngOnDestroy() {
+
+		this.paramsSub.unsubscribe();
+
+	}
+
+	toggleEdit() {
+
+		this.isEditing = !this.isEditing;
+
+	}
+
+	updatePost() {
+		
 	}
 
 }

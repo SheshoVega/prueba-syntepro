@@ -1,14 +1,32 @@
+@import "../../styles.scss";
+
 .detail {
     // border: 1px solid blue;
 
     h1 {
-        color: #004ecb;
+
+        color: $primary-dark-color;
         margin: 2rem;
-    }
+        text-align: center;
+
+    } // end .detail h1
 
     p {
-        color: #00b686;
+
+        color: $secondary-color;
         margin: 2rem;
         line-height: 1.5em;
-    }
-}
+
+    } // end .detail p
+
+
+    &-actions {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1em 0;
+
+    } // end .detail-actions
+
+} // end .detail
