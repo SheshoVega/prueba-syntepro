@@ -1,4 +1,54 @@
+@import "../styles.scss";
+
 .container {
+
+    .toggle {
+
+        &-container {
+            
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: $primary-color;
+            z-index: 2;
+
+            @include responsive(min,816){
+                display: none;
+            }
+
+        } // end .toggle-container
+        
+        border: none;
+        width: 3em;
+        height: 3em;
+        cursor: pointer;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        background-color: $primary-color;
+    
+        &:focus {
+    
+            outline: 0;
+    
+        }
+    
+        .line {
+    
+            height: 0.25em;
+            background-color: $primary-font-color;
+            margin: 0.15em auto;
+            width: 2em;
+    
+        } // end .toggle-line
+
+        @include responsive(max,815) {
+            display: flex;
+        }
+
+    } // end .toggle
 
     .sitenav {
 
@@ -7,12 +57,60 @@
         top: 0;
         left: 0;
 
+        @include responsive(max,815) {
+            width: 50%;
+            position: absolute;
+            left: -100em;
+            padding-top: 0.3em;
+        }
+
     } // end .container .sitenav
 
     .content {
 
         margin-left: 20%; 
 
+        @include responsive(max,815) {
+            margin-left: 0;
+        }
+
     } // end .container .content
 
+    @include responsive(max,815) {
+        padding-top: 3em;
+    }
+
 } // end .container
+
+.show {
+
+    left: 0 !important;
+    position: fixed !important;
+
+} // end .show
+
+
+.return {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+
+    i {
+
+        color: $primary-font-color;
+        font-size: 40px;
+        
+    } // end .return
+
+} // end .return
+
+.overlay {
+    background-color: rgba($primary-dark-color, 0.5); 
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+}

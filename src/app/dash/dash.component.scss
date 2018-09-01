@@ -23,6 +23,10 @@
             color: $secondary-font-color;
         }
 
+        @include responsive(max,330) {
+            font-size: 1em;
+        }
+
     }  // end .dash a
 
 } // end .dash

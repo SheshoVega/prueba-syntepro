@@ -1,16 +1,34 @@
 
 <main class="container">
 
-    <div class="sitenav">
+    <div class="toggle-container">
 
+        <button *ngIf="!slide" class="toggle" (click)="toSlide()">  
+            
+            <div  class="line"></div>
+            <div *ngIf="!slide" class="line"></div>
+            <div *ngIf="!slide" class="line"></div>
+            
+        </button> <!-- end .toggle -->
+
+        <div *ngIf="slide" class="return" (click)="toSlide()">
+            <i class="material-icons" >keyboard_arrow_left</i>
+        </div>
+
+    </div> <!-- end .toggle-container -->
+
+    <div *ngIf="slide" class="overlay" (click)="toSlide()"></div>
+
+    <div class="sitenav" [ngClass]="{'show' : slide}">
+        
         <router-outlet name="dashboard" ></router-outlet>
 
-    </div>
+    </div> <!-- end .sitenav -->
 
     <div class="content">
 
         <router-outlet></router-outlet>
         
-    </div>
+    </div> <!-- end .content -->
 
 </main>

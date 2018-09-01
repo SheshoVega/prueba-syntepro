@@ -22,7 +22,19 @@
             @extend .roboto-bold;
             margin: 1rem 0;
 
+            @include responsive(max,450) {
+                font-size: 1.25em;
+            }
+
         } // end .modal-content h1
+
+        @include responsive(max,815) {
+            width: 70%;
+        }
+
+        @include responsive(max,450) {
+            width: 90%;
+        }
 
     } // end .modal-content
 
