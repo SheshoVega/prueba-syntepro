@@ -143,7 +143,7 @@ html, body {
 
     }
 
-}
+} // end .btn-reg
 
 .btn-inv {
 
@@ -155,4 +155,32 @@ html, body {
 
     }
     
-}
+} // end .btn-inv
+
+.message {
+    
+    p {
+
+        @extend .roboto-light;        
+        font-size: 1.5em;
+        text-align: center;
+        color: $primary-font-color;
+        margin: 0;
+        padding: 0.25em 0;
+
+    } // end .message p
+
+} // end .message
+
+.success {
+
+    background-color: $secondary-dark-color;
+
+} // end .success
+
+
+.error {
+
+    background-color: red;
+
+} // end .error
