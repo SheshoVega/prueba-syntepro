@@ -1,5 +1,10 @@
 <app-modal *ngIf="showModal" [isEditing]="isEditing" (action)="getModalAction($event)"></app-modal>
+
 <form class="form" [formGroup]="postForm">
+
+	<div class="message" *ngIf="message" [ngClass]="{'success' : !errors, 'error': errors}">
+		<p>{{message}}</p>
+	</div> <!-- end .message -->
 
 	<h1 *ngIf="!isEditing">Crear Post</h1>
 	<h1 *ngIf="isEditing">Editar Post</h1>
@@ -10,7 +15,8 @@
 	<label for="body">Contenido</label>
 	<textarea id="body" formControlName="body" placeholder="Digite el contenido del post..." rows="5"></textarea>
 
-</form>
+</form> <!-- end .form -->
+
 <div class="form-actions">
 
 	<a *ngIf="!isEditing" class="btn btn-reg" (click)="toModal()">Guardar</a>
