@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($primary-dark-color, 0.5); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-content {
+
+        background-color: $primary-font-color;
+        width: 50%;
+        padding: 2em 0;
+
+        h1 {
+            text-align: center;
+            @extend .roboto-bold;
+            margin: 1rem 0;
+
+        } // end .modal-content h1
+
+    } // end .modal-content
+
+    &-actions {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1em 0;
+
+    } // end .modal-actions
+
+} // end .modal

@@ -1,0 +1,19 @@
+<div class="modal">
+
+	<div class="modal-content">
+
+		<h1>Desea {{operation}} post?</h1>
+
+		<div class="modal-actions">
+
+			<a *ngIf="!isEditing" class="btn btn-reg" (click)="modalAction(true)">Guardar</a>
+
+			<a *ngIf="isEditing" class="btn btn-reg" (click)="modalAction(true)">Actualizar</a>
+		
+			<a class="btn btn-inv" (click)="modalAction(false)">Cancelar</a>
+
+		</div> <!-- end .modal-actions -->
+
+	</div> <!-- end .modal-content -->
+
+</div> <!-- end .modal -->

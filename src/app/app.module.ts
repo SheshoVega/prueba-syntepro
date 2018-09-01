@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     DashComponent,
     ListComponent,
     FormComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
